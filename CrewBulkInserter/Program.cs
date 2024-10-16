@@ -41,7 +41,7 @@ foreach (string line in File.ReadLines(filePath).Skip(1))
     }
 
     string tconst = splitLine[0];
-    string Directors = splitLine[1];
+    string directors = splitLine[1];
     string writers = splitLine[2];
 
 
@@ -49,7 +49,7 @@ foreach (string line in File.ReadLines(filePath).Skip(1))
     TitleCrew newTitle = new TitleCrew
     {
         Tconst = tconst,
-        Directors = Directors,
+        Directors = directors,
         Writers = writers
     };
 
