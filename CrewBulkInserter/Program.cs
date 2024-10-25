@@ -60,7 +60,7 @@ foreach (string line in File.ReadLines(filePath).Skip(1))
 Console.WriteLine("List of TitleCrews length: " + titleCrew.Count);
 
 SqlConnection sqlConn = new SqlConnection("server=localhost;database=IMDB;" +
-    "user id=sa;password=Holger1208!;TrustServerCertificate=True");
+    "user id=sa;password=EnterYourPassWord!;TrustServerCertificate=True");
 
 sqlConn.Open();
 SqlTransaction transAction = sqlConn.BeginTransaction();
@@ -71,7 +71,7 @@ try
 {
     inserter.Insert(titleCrew, sqlConn, transAction);
     transAction.Commit();
-    //transAction.Rollback();
+    
 }
 catch (SqlException ex)
 {
@@ -87,7 +87,7 @@ Console.WriteLine("milliseconds passed: " + (after - before).TotalMilliseconds);
 
 int? ParseInt(string value)
 {
-    if (value.ToLower() == "\\n") // checks if it is \n
+    if (value.ToLower() == "\\n") 
     {
         return null;
     }
@@ -98,7 +98,7 @@ int? ParseInt(string value)
     }
     else
     {
-        // Handle the case where the value is not a valid integer
+        
         return null;
     }
 }
